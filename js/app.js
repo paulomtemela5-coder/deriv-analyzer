@@ -1,11 +1,5 @@
-const welcome=document.getElementById("welcome");
-const home=document.getElementById("home");
-const startBtn=document.getElementById("startBtn");
+document.getElementById("startBtn").onclick=function(){
 
-startBtn.onclick=function(){
-
-welcome.style.display="none";
-
-home.style.display="block";
+document.getElementById("welcome").style.display="none";
 
 };
