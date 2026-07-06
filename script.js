@@ -1,28 +1,21 @@
-const APP_ID = "33KbG7ZQDjwyXVXFAGfOl";
+const market = document.getElementById("market");
+const trend = document.getElementById("trend");
+const strength = document.getElementById("strength");
+const btn = document.getElementById("analyzeBtn");
 
-const statusText = document.getElementById("status");
-const connectBtn = document.getElementById("connectBtn");
+btn.onclick = () => {
 
-connectBtn.addEventListener("click", () => {
-    statusText.textContent = "Inaunganisha...";
+    market.innerHTML = "Volatility 75";
 
-    const ws = new WebSocket(`wss://ws.derivws.com/websockets/v3?app_id=${APP_ID}`);
+    const trends = [
+        "UP 📈",
+        "DOWN 📉",
+        "SIDEWAYS ➖"
+    ];
 
-    ws.onopen = () => {
-        statusText.textContent = "✅ Connected";
-        console.log("Connected to Deriv");
-    };
+    trend.innerHTML =
+        trends[Math.floor(Math.random()*3)];
 
-    ws.onmessage = (msg) => {
-        console.log("Message:", msg.data);
-    };
-
-    ws.onerror = (err) => {
-        statusText.textContent = "❌ Connection Error";
-        console.log("Error:", err);
-    };
-
-    ws.onclose = (event) => {
-        console.log("Closed:", event.code, event.reason);
-    };
-});
+    strength.innerHTML =
+        Math.floor(Math.random()*100)+"%";
+};
