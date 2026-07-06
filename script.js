@@ -6,27 +6,23 @@ const connectBtn = document.getElementById("connectBtn");
 connectBtn.addEventListener("click", () => {
     statusText.textContent = "Inaunganisha...";
 
-    const ws = new WebSocket(
-        `wss://ws.derivws.com/websockets/v3?app_id=${APP_ID}`
-    );
+    const ws = new WebSocket(`wss://ws.derivws.com/websockets/v3?app_id=${APP_ID}`);
 
     ws.onopen = () => {
-        statusText.textContent = "✅ Imeunganishwa na Deriv";
-
-        ws.send(JSON.stringify({
-            ping: 1
-        }));
+        statusText.textContent = "✅ Connected";
+        console.log("Connected to Deriv");
     };
 
-    ws.onmessage = (event) => {
-        console.log(event.data);
+    ws.onmessage = (msg) => {
+        console.log("Message:", msg.data);
     };
 
-    ws.onerror = () => {
+    ws.onerror = (err) => {
         statusText.textContent = "❌ Connection Error";
+        console.log("Error:", err);
     };
 
-    ws.onclose = () => {
-        console.log("Connection closed");
+    ws.onclose = (event) => {
+        console.log("Closed:", event.code, event.reason);
     };
 });
