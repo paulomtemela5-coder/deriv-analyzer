@@ -6,63 +6,72 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#0f766e);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+background:linear-gradient(135deg,#0f172a,#1e293b,#0f766e);
 color:white;
+min-height:100vh;
+padding:20px;
 }
 
 #welcome{
-width:90%;
-max-width:400px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
 text-align:center;
-background:rgba(255,255,255,0.08);
-padding:40px 25px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 20px rgba(0,0,0,.4);
 }
 
 #welcome h1{
-font-size:38px;
+font-size:42px;
 color:#00ffcc;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
-#welcome h3{
+#welcome p{
 font-size:18px;
-margin-bottom:40px;
-color:#ddd;
+margin-bottom:35px;
+color:#d1d5db;
 }
 
 button{
-width:220px;
-padding:15px;
-border:none;
-border-radius:40px;
 background:#00ff99;
+color:#000;
+padding:15px 35px;
 font-size:20px;
+border:none;
+border-radius:30px;
 font-weight:bold;
+cursor:pointer;
+}
+
+#home{
+display:none;
+}
+
+#home h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:18px;
+font-size:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,.15);
 cursor:pointer;
 transition:.3s;
 }
 
-button:hover{
-transform:scale(1.05);
+.card:hover{
+background:#00ff99;
+color:black;
+transform:scale(1.03);
 }
-
-#dashboard{
-width:95%;
-max-width:500px;
-text-align:center;
-}
-
-select{
-width:100%;
-padding:15px;
-font-size:18px;
-border-radius:10px;
-margin:20px 0;
-    }
