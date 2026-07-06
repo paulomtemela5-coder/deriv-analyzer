@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deriv Analyzer</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>DERIV ANALYZER</h1>
+<h1>DERIV ANALYZER</h1>
 
-    <p>Status:
-        <span id="status">Haijaunganishwa</span>
-    </p>
+<div class="card">
+    <h2>Market Status</h2>
+    <p id="market">Waiting...</p>
+</div>
 
-    <button id="connectBtn">Unganisha Deriv API</button>
+<div class="card">
+    <h2>Trend</h2>
+    <p id="trend">Unknown</p>
+</div>
 
-    <script src="script.js"></script>
+<div class="card">
+    <h2>Strength</h2>
+    <p id="strength">0%</p>
+</div>
+
+<button id="analyzeBtn">Analyze Market</button>
+
+<script src="script.js"></script>
 
 </body>
 </html>
